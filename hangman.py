@@ -24,7 +24,7 @@ while True:
 	myListChoice = int(input("Topics:\n\n1. Movies \n2. TV Shows \n3. Names\n\nEnter Topic: "))
 
 	#print ('"'+myListChoice+'"')
-	## Checks what number the user chose
+	## Checks what number the user chose, uncomment this if we get errors with the list selection screen
 	if myListChoice == 1:
 		myList = myMovies
 		break
