@@ -1,1 +1,1 @@
-This is somewhat abandoned. But ocationally Ill work on it if Im not doing other things.
+This is somewhat abandoned. But occasionally I'll work on it if I'm not doing other things.
