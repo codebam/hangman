@@ -4,7 +4,7 @@
 import os
 #print (os.name)
 import random
-def ConvertTo_(myL):
+def ConvertToUnderscore(myL):
 	cypherd = ""
 	for i in myL:
 		if i == " ":
@@ -43,7 +43,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 ## Remember to get rid of this line for the end user
 print ("\n",myChoice,"\n")
 
-print (ConvertTo_(myChoice))
+print (ConvertToUnderscore(myChoice))
 userGuessesRemaining = 10
 for i in range(10):
 	userGuess = input("\nGuesses Remaining: %i\n""Enter your Guess: " %(userGuessesRemaining))
