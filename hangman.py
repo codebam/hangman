@@ -4,47 +4,56 @@
 import os
 #print (os.name)
 import random
-def ConvertToUnderscore(myL):
-	cypherd = ""
-	for i in myL:
+def convert_underscore(topic):
+	underscores = ""
+	for i in topic:
 		if i == " ":
-			cypherd += ("   ")
+			underscores += ("   ")
 		else:
-			cypherd += (" _ ")
-	for i in myL:
+			underscores += (" _ ")
+	for i in topic:
 
-		return cypherd
+		return underscores
+
+def choose_topic(topic_choice):
+	print("Topics:\n\n1. Movies \n2. TV Shows \n3. Names\n\n(type /quit to quit)\n\nEnter Topic: ")
 
 ## Lists of words to choose from
-myMovies = ['spider man','shrek','batman']
-myTV = []
-myNames = []
+list_movie = ['spider man','shrek','batman']
+list_tv = []
+list_name = []
 
 while True:
-	myListChoice = int(input("Topics:\n\n1. Movies \n2. TV Shows \n3. Names\n\nEnter Topic: "))
+	topic_choice = input("Topics:\n\n1. Movies \n2. TV Shows \n3. Names\n\n(type /quit to quit)\n\nEnter Topic: ")
 
-	#print ('"'+myListChoice+'"')
+	#print ('"'+topic_choice+'"')
 	## Checks what number the user chose, uncomment this if we get errors with the list selection screen
-	if myListChoice == 1:
-		myList = myMovies
+	# if topic_choice == "/quit":
+	# 	topic = 0
+	# 	break
+	# else:
+	print(type(topic_choice))
+	int(topic_choice)
+	if topic_choice == 1:
+		topic = list_movie
 		break
-	elif myListChoice == 2:
-		myList = myTV
+	elif topic_choice == 2:
+		topic = list_tv
 		break
-	elif myListChoice == 3:
-		myList = myNames
+	elif topic_choice == 3:
+		topic = list_name
 		break
 	else:
 		print ("\nSorry, That's not a valid choice, please choose again:\n")
 
-myChoice = random.choice(myList)
+topic_pick = random.choice(topic)
 os.system('cls' if os.name == 'nt' else 'clear')
 
 ## Remember to get rid of this line for the end user
-print ("\n",myChoice,"\n")
+print ("\n",topic_pick,"\n")
 
-print (ConvertToUnderscore(myChoice))
-userGuessesRemaining = 10
+print (convert_underscore(topic_pick))
+user_guess_remaining = 10
 for i in range(10):
-	userGuess = input("\nGuesses Remaining: %i\n""Enter your Guess: " %(userGuessesRemaining))
-	userGuessesRemaining -= 1
+	user_guess = input("\nGuesses Remaining: %i\n""Enter your Guess: " %(user_guess_remaining))
+	user_guess_remaining -= 1
