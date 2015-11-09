@@ -12,7 +12,6 @@ def convert_underscore(topic):
 		else:
 			underscores += (" _ ")
 	for i in topic:
-
 		return underscores
 
 def choose_topic(topic_choice):
@@ -32,22 +31,23 @@ while True:
 	# 	topic = 0
 	# 	break
 	# else:
-	print(type(topic_choice))
-	int(topic_choice)
-	if topic_choice == 1:
+
+	if topic_choice == "/quit":
+		quit()
+	if topic_choice == "1":
 		topic = list_movie
 		break
-	elif topic_choice == 2:
+	elif topic_choice == "2":
 		topic = list_tv
 		break
-	elif topic_choice == 3:
+	elif topic_choice == "3":
 		topic = list_name
 		break
 	else:
 		print ("\nSorry, That's not a valid choice, please choose again:\n")
 
 topic_pick = random.choice(topic)
-os.system('cls' if os.name == 'nt' else 'clear')
+#os.system('cls' if os.name == 'nt' else 'clear')
 
 ## Remember to get rid of this line for the end user
 print ("\n",topic_pick,"\n")
