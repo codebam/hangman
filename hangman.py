@@ -18,9 +18,11 @@ def choose_topic(topic_choice):
 	print("Topics:\n\n1. Movies \n2. TV Shows \n3. Names\n\n(type /quit to quit)\n\nEnter Topic: ")
 
 ## Lists of words to choose from
-list_movie = ['spider man','shrek','batman']
-list_tv = []
-list_name = []
+wordlist = {
+'movie' : ['spiderman', 'shrek', 'batman'],
+'tv' : '',
+'name' : ''
+}
 
 while True:
 	topic_choice = input("Topics:\n\n1. Movies \n2. TV Shows \n3. Names\n\n(type /quit to quit)\n\nEnter Topic: ")
@@ -32,8 +34,9 @@ while True:
 	# 	break
 	# else:
 
-	if topic_choice == "/quit":
+	if topic_choice == "/quit" or "/q":
 		quit()
+
 	if topic_choice == "1":
 		topic = list_movie
 		break
@@ -47,13 +50,17 @@ while True:
 		print ("\nSorry, That's not a valid choice, please choose again:\n")
 
 topic_pick = random.choice(topic)
+## Enable this when you're done debugging
 #os.system('cls' if os.name == 'nt' else 'clear')
 
-## Remember to get rid of this line for the end user
+## Remember to get rid of this line for the user
 print ("\n",topic_pick,"\n")
 
 print (convert_underscore(topic_pick))
-user_guess_remaining = 10
-for i in range(10):
-	user_guess = input("\nGuesses Remaining: %i\n""Enter your Guess: " %(user_guess_remaining))
-	user_guess_remaining -= 1
+guess_count = 10
+while guess_count > 0:
+	correct_guess = False
+	# re init to false on every iteration
+	guess = input("\nGuesses Remaining: %i\n""Enter your Guess: " %(guess_count))
+	if correct_guess == False:
+		guess_count -= 1
