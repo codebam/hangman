@@ -1,4 +1,4 @@
-## Written by Sean Behan
+## Sean Behan
 ## Copyright 2015
 
 import os
